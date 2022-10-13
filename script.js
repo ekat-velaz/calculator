@@ -1,3 +1,8 @@
+let a;
+let b;
+let arr;
+let result;
+
 const inputScreen = document.querySelector(".input");
 const resultScreen = document.querySelector(".result");
 const btnClear = document.querySelector("#btn-clear");
@@ -76,11 +81,77 @@ btn2.addEventListener("click", () => {
  });
 
  btnEquals.addEventListener("click", () => {
-    inputScreen.textContent =  `${inputScreen.textContent}=`;
+    
+    operate();
  });
 
  btnDot.addEventListener("click", () => {
     inputScreen.textContent =  `${inputScreen.textContent}.`;
  });
 
- 
+ function add(a,b) {
+    result = a+b;
+    resultScreen.textContent = result;
+ };
+
+ function substract(a,b) {
+    result = a - b;
+    resultScreen.textContent = result;
+ };
+
+ function  multiply(a,b) {
+    result = a * b;
+    resultScreen.textContent = result;
+ };
+
+ function divide(a,b) {
+    result = a / b;
+    resultScreen.textContent = result;
+ };
+
+function getAandB() {
+
+    if (inputScreen.textContent.includes("+")) {
+        arr = inputScreen.textContent.split("+");
+
+    } else if (inputScreen.textContent.includes("-")) {
+        arr = inputScreen.textContent.split("-");
+
+    } else if (inputScreen.textContent.includes("x")) {
+        arr = inputScreen.textContent.split("x");
+
+    } else if (inputScreen.textContent.includes("/")) {
+        arr = inputScreen.textContent.split("/");
+    };
+  
+    a = arr.slice(0,1);
+    b = arr.slice(1,2);
+    console.log(a,b);
+
+    a = a.toString();
+    b = b.toString();
+    console.log(a,b);
+
+    a = +a;
+    b = +b;
+    console.log(a,b);
+};
+
+
+ function operate() {
+    
+    getAandB();
+
+
+    if (inputScreen.textContent.includes("+")) {
+        add(a,b);
+    } else if (inputScreen.textContent.includes("-")) {
+        substract(a,b);
+    } else if (inputScreen.textContent.includes("x")) {
+        multiply(a,b);
+    } else if (inputScreen.textContent.includes("+")) {
+        divide(a,b);
+    };
+
+    
+ };
