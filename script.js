@@ -2,6 +2,7 @@ let a;
 let b;
 let arr;
 let result;
+let arrayScreen;
 
 const inputScreen = document.querySelector(".input");
 const resultScreen = document.querySelector(".result");
@@ -23,6 +24,18 @@ const btnMultiply = document.querySelector("#btn-multiply");
 const btnDivide = document.querySelector("#btn-divide");
 const btnEquals = document.querySelector("#btn-equals");
 const btnDot = document.querySelector("#btn-dot");
+
+btnClear.addEventListener("click", () => {
+   inputScreen.textContent = "";
+});
+
+btnDelete.addEventListener("click", () => {
+    arrayScreen = inputScreen.textContent;
+    arrayScreen = arrayScreen.split("");
+    let poppedOut = arrayScreen.pop();
+    arrayScreen = arrayScreen.join("");
+inputScreen.textContent = arrayScreen;
+ });
 
 btn1.addEventListener("click", () => {
    inputScreen.textContent =  `${inputScreen.textContent}1`;
