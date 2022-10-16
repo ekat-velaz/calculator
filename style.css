@@ -1,0 +1,85 @@
+body {
+    background-color: #448D76;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.screen {
+    background-color: #FCBA12;
+    color: #093426;
+    width:250px;
+    height: 100px;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items:flex-end;
+    padding: 10px;
+    padding-right: 50px;
+    border: solid 15px #AE0D7A;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+button {
+    width: 80px;
+    height:80px;
+    background-color: #F7EDD4;
+    color:#093426;
+    font-size: 40px;
+    font-weight: bold;
+    border: solid 8px #AE0D7A;
+}
+
+button:hover {
+    background-color: #FCBA12;
+}
+
+.number-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 320px;
+    
+}
+
+.clear-and-delete {
+    display: flex;
+    
+}
+
+#btn-clear, #btn-delete {
+    width: 170px;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width:340px;
+    height: 550px;
+    background-color: #AE0D7A;
+    border: solid 20px #093426;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.operators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 83px;
+    flex-wrap: wrap;
+}
+
+.buttons {
+    display: flex;
+    width: 340px;
+}
+
+.operators button {
+width: 100px;
+}
