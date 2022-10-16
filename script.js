@@ -125,7 +125,7 @@ btn2.addEventListener("click", () => {
  });
 
  btnEquals.addEventListener("click", () => {
-    splitInput();
+    
     operate();
     btnDot.disabled = false;
  });
@@ -216,6 +216,7 @@ function getAandBfromResult() {
 };
 
  function operate() {
+   splitInput();
 stringStart = stringInput;
 
    stringInput = stringInput.toString();
@@ -252,4 +253,22 @@ function getStringPart() {
    stringPart = stringInput.slice(0,1);
    stringPart = stringPart.toString();
    console.log(stringPart);
+};
+
+
+addEventListener('keypress', logKey);
+
+function logKey(e) {
+  
+  if (e.key == "+" || e.key == "-" || e.key == "x"|| e.key == "/") {
+   inputScreen.textContent += `${e.key}`;
+   stringInput = `${stringInput}"${e.key}"`;
+  } else if (e.key == "1" || e.key == "2" || e.key == "3"|| e.key == "4" ||
+  e.key == "5" || e.key == "6" || e.key == "7"|| e.key == "8" ||
+  e.key == "9" || e.key == "0" ) {
+   inputScreen.textContent += `${e.key}`;
+   stringInput = `${stringInput}${e.key}`;
+  } else if (e.key == "=") {
+   operate();
+  };
 };
